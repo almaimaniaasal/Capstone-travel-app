@@ -1,0 +1,168 @@
+/*Variables Decleration*/
+
+$mainFont: "Cavolini";
+$fontColor: #BC8F8F;
+$subFontColor: grey;
+$subFont: "Candara";
+$backgroundColor: #EEE8AA;
+body {
+    /*The Home Page Structure*/
+    height: auto;
+    margin: 0;
+    /*Display Type*/
+    display: grid;
+    /*Rows and Columns Specification*/
+    grid-template-columns: 40% 40% 20%;
+    grid-auto-rows: minmax(20px, auto);
+    /*Assigning Grid Areas*/
+    grid-template-areas: "head head head" "article article ." "foot foot foot";
+    background-image: url("../media/background.png");
+    background-size: contain;
+    background-color: $backgroundColor;
+    font-family: $mainFont;
+}
+
+.contain {
+    grid-area: head;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 65px;
+    border-bottom: 5px solid $fontColor;
+    h1 {
+        justify-content: center;
+        text-align: center;
+        margin: 50px;
+        font-size: 60px;
+        color: $fontColor;
+    }
+}
+
+#app {
+    grid-area: article;
+    justify-content: center;
+    margin: 8%;
+    margin-top: 0;
+    font-size: 1.7em;
+    border: 1px solid $fontColor;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #FAFAD2;
+    border-radius: 10px;
+    box-shadow: 5px 5px lightgrey;
+    color: $fontColor;
+    h3 {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        color: $fontColor;
+    }
+    .card-img {
+        width: 30%;
+        height: 80%;
+        border: 4px solid $fontColor;
+        border-radius: 5px;
+        margin-left: 40px;
+    }
+    .card-topic {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding: 10%;
+    }
+    .card-Description {
+        margin-left: 10px;
+        font-family: $subFont;
+        font-size: 20px;
+        color: $subFontColor;
+    }
+    .delete {
+        margin: 0;
+        border: none;
+        align-self: flex-end;
+    }
+}
+
+fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: none;
+    font-family: $subFont;
+    input {
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        color: $fontColor;
+        background-color: $backgroundColor;
+        font-family: $subFont;
+        margin: 5%;
+        border: none;
+        border-radius: 5%;
+        &:hover {
+            border: 5px solid $fontColor;
+            border-radius: 5%;
+        }
+    }
+}
+
+button {
+    border: 2px solid $fontColor;
+    border-radius: 5%;
+    font-size: 1em;
+    color: $fontColor;
+    background-color: $backgroundColor;
+    font-family: $subFont;
+    margin: 5%;
+    &:hover {
+        border: 5px solid $fontColor;
+        border-radius: 5%;
+    }
+    &#delete-trip.invisible {
+        appearance: none;
+        background: transparent;
+        border: none !important;
+    }
+}
+
+
+/* Reset style for HTML element on active to have no border*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+/* Style for Placeholder Text*/
+
+::placeholder {
+    /* Firefox, Chrome, Opera */
+    color: $fontColor;
+    font-family: $subFont;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $fontColor;
+    font-family: $subFont;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $fontColor;
+    font-family: $subFont;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trip Planner</title>
+</head>
+
+<body>
+    <header class="contain">
+        <h1>TRIP <br> PLANNER</h1>
+    </header>
+    <main id="app">
+        <article id="tripinfo">
+            <img src="" alt="" class="card-img" id="city-image">
+            <div class="card-topic">
+                <h3 id="triptitle"></h3>
+                <p class="card-Description" id="trip-details"></p>
+                <form class="delete">
+                    <button type="submit" class="invisible" id="delete-trip"></button>
+                </form>
+            </div>
+        </article>
+        <article class="card">
+            <h3>New Trip</h3>
+            <form id="form">
+                <fieldset>
+                    <label for="destination">My Destination City:</label>
+                    <input type="text" id="destination-city" placeholder="Destination City" required>
+                    <label for="country">My Destination Country:</label>
+                    <input type="text" id="destination-country" placeholder="Destination Country" required>
+                    <label for="departDate">My Daparture Date:</label>
+                    <input type="date" id="departDate" name="trip-start" placeholder="mm/dd/yyyy" required>
+                    <button id="addtrip" type="submit" value="submit">Add Trip</button>
+                </fieldset>
+            </form>
+        </article>
+    </main>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
