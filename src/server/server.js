@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData = {};
 
 // Require Express to run server and routes
 const bodyParser = require('body-parser');
@@ -64,17 +64,20 @@ app.post('/addInfo', async(req, res) => {
         .then((pixabayData) => {
             cityImage = pixabayData.hits[0].webformatURL;
         });
-
-    console.log(temprature, weatherstatus);
-    projectData = {
-        destination: req.body.destination,
-        country: req.body.country,
-        temp: temprature,
-        weatherStatus: weatherstatus,
-        remainingDays: remainingDays,
-        cityImage: cityImage,
-        departDate: req.body.departDate
+    try {
+        projectData = {
+            destination: req.body.destination,
+            country: req.body.country,
+            temp: temprature,
+            weatherStatus: weatherstatus,
+            remainingDays: remainingDays,
+            cityImage: cityImage,
+            departDate: req.body.departDate
+        }
+    } catch (error) {
+        console.log('error', error);
     }
+
 
     console.log(projectData);
     res.send(projectData);
@@ -118,3 +121,12 @@ const getImage = async(url, key, city) => {
         console.log("error", error);
     }
 }
+
+module.exports = server;
+
+//for testing
+const sum = (a, b) => {
+    return a + b;
+}
+
+module.exports = sum;
