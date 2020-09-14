@@ -123,10 +123,3 @@ const getImage = async(url, key, city) => {
 }
 
 module.exports = app;
-
-//for testing
-// const sum = (a, b) => {
-//     return a + b;
-// }
-
-// module.exports = sum;

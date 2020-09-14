@@ -33,7 +33,6 @@ const handleSubmit = (event) => {
     if (Client.checkForm()) {
         Client.postData('http://localhost:8000/addInfo', { destination: destinationCity, country: destinationCountry, departDate: departdate })
             .then((res) => {
-                console.log(res);
                 document.getElementById('tripinfo').classList.add('card');
                 document.getElementById('city-image').src = res.cityImage;
                 document.getElementById('triptitle').innerHTML = `${res.destination}, ${res.country}`;
