@@ -122,11 +122,11 @@ const getImage = async(url, key, city) => {
     }
 }
 
-module.exports = server;
+module.exports = app;
 
 //for testing
-const sum = (a, b) => {
-    return a + b;
-}
+// const sum = (a, b) => {
+//     return a + b;
+// }
 
-module.exports = sum;
+// module.exports = sum;
